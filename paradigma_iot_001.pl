@@ -18,10 +18,10 @@ use Log::Dispatch::File;
 use File::Fetch;
 use URI::Escape qw(uri_escape);
 
-use constant LOG_DIR    => '/var/log/paradigma';
+use constant LOG_DIR    => './';
 use constant LOG_FILE   => 'paradigma.log';
 
-my $systalan_ip = '10.5.6.76';
+my $systalan_ip = ''192.168.188.34';
 my $systalan_port = '7260';
 my $systalan_pw = '31323334';
 my $SocketTimeOut  = 120; # seconds, must be > 60
@@ -290,14 +290,14 @@ sub Process
 
 	$log->debug ("data sent to influx: " . $line);
 
-        my $res = Hijk::request({
-        method       => "POST",
-        host         => "127.0.0.1",
-        port         => "8086",
-        path         => "/write",
-        query_string => "db=solardaten&precision=ms&u=kwb&p=kwb",
-        body         => $line
-        });
+#        my $res = Hijk::request({
+#        method       => "POST",
+#        host         => "127.0.0.1",
+#        port         => "8086",
+#        path         => "/write",
+#        query_string => "db=solardaten&precision=ms&u=kwb&p=kwb",
+#        body         => $line
+#        });
 
 
 
